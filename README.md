@@ -24,9 +24,7 @@ Todo
 Getting Started
 ---------------
 
-Open config.example.json to get started.
 
-In config.json block_notify_url use one port 1220.
 
 You'll need access to a [blockchain RPC](https://dogecoin.com/dogepedia/how-tos/operating-a-node/) and a [ZMQ block notification URL](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md).
 
@@ -61,6 +59,10 @@ For ZMQ notifications you have to start your nodes with block notification on:
     //Remote nodes need additional configuration if they're on WAN or LAN (firewalls, port forwarding, etc.)
     -zmqpubhashblock="tcp://0.0.0.0:<your-port-here>"
 
+    Copy config.example.json to config.json to get started.
+    In config.json edit the variables to your pool.
+    in block_notify_url only 1 port is needed.
+
 Setting up the Postgres database
 --------------------------------
 
@@ -75,31 +77,14 @@ Open the directory below to find scripts that will set up your databases.
 
 You can skip 3-multi-pool-partition.sql if you're still testing.
 
-Build the pool = go build
-
-Start the pool = ./dogepool
-
-You can run the pool using screen with the following command: screen -dmS pool ./dogepool
-or as a systemd service: Copy the following example:
-
-[Unit]
-Description=merged-mining-pool
-After=network-online.target
-
-[Service]
-ExecStart=/path/to/your/pool/./dogepool
-
-Restart=always
-RestartSec=3
-5
-
-[Install]
-WantedBy=multi-user.target
-
 
 
 Connecting to the pool
 ----------------------
+
+Build the pool = go build
+
+Run the pool = ./dogepool
 
 Once you have it running, your client can connect with the following login:
 
