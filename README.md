@@ -32,30 +32,8 @@ For ZMQ notifications you have to start your nodes with block notification on:
 
     // Assuming your node is on the same machine as this pool.
 
-    dogecoin.conf =
-    
-    server=1
-    daemon=1
-    rpcallowip=127.0.0.1
-    rpcuser=your user name
-    rpcpassword=your password
-    rpcport=22555
-    zmqpubrawblock="tcp://127.0.0.1:1220"
-    zmqpubrawtx="tcp://127.0.0.1:1221"
-    zmqpubhashblock="tcp://127.0.0.1:1222"
-
-    litecoin.conf =
-
-    server=1
-    daemon=1
-    rpcallowip=127.0.0.1
-    rpcuser=your user name
-    rpcpassword=your password
-    rpcport=9332
-    zmqpubrawblock="tcp://127.0.0.1:1223"
-    zmqpubrawtx="tcp://127.0.0.1:1224"
-    zmqpubhashblock="tcp://127.0.0.1:1225"
-
+  See Example Node Configuration in Docs Folder
+   
     //Remote nodes need additional configuration if they're on WAN or LAN (firewalls, port forwarding, etc.)
     -zmqpubhashblock="tcp://0.0.0.0:<your-port-here>"
 
