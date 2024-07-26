@@ -26,7 +26,7 @@ Getting Started
 
 Open config.example.json to get started.
 
-In config.json set_notify_url use one port 1220.
+In config.json block_notify_url use one port 1220.
 
 You'll need access to a [blockchain RPC](https://dogecoin.com/dogepedia/how-tos/operating-a-node/) and a [ZMQ block notification URL](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md).
 
@@ -74,6 +74,29 @@ Open the directory below to find scripts that will set up your databases.
     persistence/schemas
 
 You can skip 3-multi-pool-partition.sql if you're still testing.
+
+Build the pool = go build
+
+Start the pool = ./dogepool
+
+You can run the pool using screen with the following command: screen -dmS pool ./dogepool
+or as a systemd service: Copy the following example:
+
+[Unit]
+Description=merged-mining-pool
+After=network-online.target
+
+[Service]
+ExecStart=/path/to/your/pool/./dogepool
+
+Restart=always
+RestartSec=3
+5
+
+[Install]
+WantedBy=multi-user.target
+
+
 
 Connecting to the pool
 ----------------------
