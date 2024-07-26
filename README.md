@@ -26,6 +26,8 @@ Getting Started
 
 Open config.example.json to get started.
 
+In config.json set_notify_url use one port 1220.
+
 You'll need access to a [blockchain RPC](https://dogecoin.com/dogepedia/how-tos/operating-a-node/) and a [ZMQ block notification URL](https://github.com/bitcoin/bitcoin/blob/master/doc/zmq.md).
 
 For ZMQ notifications you have to start your nodes with block notification on:
