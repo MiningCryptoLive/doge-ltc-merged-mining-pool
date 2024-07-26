@@ -84,7 +84,9 @@ Connecting to the pool
 
 Build the pool = go build
 
-Run the pool = ./dogepool
+Run the pool =  in terminal run ./dogepool
+Using Screen = in terminal run screen -dmS pool ./dogepool
+
 
 Once you have it running, your client can connect with the following login:
 
